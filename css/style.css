@@ -1,0 +1,20 @@
+body {
+    /*background-image: url("img/salmon.png");*/
+    background-size: 100%;
+    background-attachment: fixed;
+    background-color: pink;
+}
+
+h1 {
+color: maroon;
+text: Arial;
+background-color: pink;
+text-align: center;
+}
+
+h2 {
+  color: pink;
+  text: courier;
+  background-color: black;
+  text-align: center;
+}
