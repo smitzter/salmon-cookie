@@ -41,7 +41,7 @@ var parentElement = document.getElementById('kittenProfiles');
 var article = document.createElement('article');
 parentElement.appendChild(element);
 
-
+//comment for problemsolving
 var h2 = document.createElement('h2');
 h2.textContent = pike.name;
 article.appendChild(h2);
