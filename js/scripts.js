@@ -5,11 +5,49 @@
 
 //be able to add and remove locations from daily projections report
 //easily modify input #s based on day of the week, special events etc
-var pike = {
-name: 'pike',
-getCookies: function(min, max) {
+//var name = store location
+
+//var min customers
+//var max customers
+//var average cookies
+//var store = new store(name, min, max, avg cookies)
+//something to push info to webpage
+//something to add and remove locations
+//a way to input data (later in the week)
+function avgCookie() {
     return Math.floor(Math.random() *
     (max - min + 1) + min);
+    return avgCookie;
+}
+
+function timeStamp(){
+  for (var i = 0; i< 20; i++) {
+      var li = document.crateElement('li');
+      li.textContent = timeStamp.avgCookies[i];
+      ul.appendChild(li);
+}
+
+function Store(name, timeStamp, avgCookie){
+  this.name = name;
+  this.timeStamp = timeStamp;
+  this.avgCookie = avgCookie;
+  return this.Store;
+};
+
+var pikeStore = new Store('Pike' + timeStamp + ' hours' + avgCookie + ' cookies');
+var seaTacAirport = new Store('SeaTac Airport' + timeStamp + ' hours' + avgCookie + ' cookies');
+var seattleCenter = new Store('Seattle Center' + timeStamp + ' hours' + avgCookie + ' cookies');)
+// var storeName, i, avgCookie;
+storeName = document.getElementById('storeName');
+i = document.getElementById('i');
+avgCookie = document.getElementById('avgCookie');
+
+storeName.textContent = store.name;
+i.textContent = store.i.toFixed(2);
+avgCookie.textContent = store.avgCookie();
+
+var pike = {
+name: 'pike',
     }
 };
 
