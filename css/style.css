@@ -18,3 +18,13 @@ h2 {
   background-color: black;
   text-align: center;
 }
+
+table {
+  background-color: white;
+  border: 3px black;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center
+}

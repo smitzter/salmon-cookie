@@ -1,103 +1,95 @@
+'use strict';
 
-//min cust per hour
-//max cust per hour
-//ave # of cookies per cust
-
-//be able to add and remove locations from daily projections report
-//easily modify input #s based on day of the week, special events etc
-//var name = store location
-
-//var min customers
-//var max customers
-//var average cookies
-//var store = new store(name, min, max, avg cookies)
-//something to push info to webpage
-//something to add and remove locations
-//a way to input data (later in the week)
-function avgCookie() {
-    return Math.floor(Math.random() *
-    (max - min + 1) + min);
-    return avgCookie;
-}
-
-function timeStamp(){
-  for (var i = 0; i< 20; i++) {
-      var li = document.crateElement('li');
-      li.textContent = timeStamp.avgCookies[i];
-      ul.appendChild(li);
-}
-
-function Store(name, timeStamp, avgCookie){
+function StoreProfile(name, min, max, avgCookieSale) {
   this.name = name;
-  this.timeStamp = timeStamp;
-  this.avgCookie = avgCookie;
-  return this.Store;
+  this.min = min;
+  this.max = max;
+  this.avgCookieSale = avgCookieSale;
 };
 
-var pikeStore = new Store('Pike' + timeStamp + ' hours' + avgCookie + ' cookies');
-var seaTacAirport = new Store('SeaTac Airport' + timeStamp + ' hours' + avgCookie + ' cookies');
-var seattleCenter = new Store('Seattle Center' + timeStamp + ' hours' + avgCookie + ' cookies');)
-// var storeName, i, avgCookie;
-storeName = document.getElementById('storeName');
-i = document.getElementById('i');
-avgCookie = document.getElementById('avgCookie');
+function AvgCustPerHour(min, max) {
+  return Math.floor(Math.random() *
+  (max - min + 1) + min);
+}
 
-storeName.textContent = store.name;
-i.textContent = store.i.toFixed(2);
-avgCookie.textContent = store.avgCookie();
+var pike = new StoreProfile('1st and Pike', 23, 65, 6.3);
+console.log(pike.min);
+var seaTacAirport = new StoreProfile('SeaTac Airport', 3, 24, 1.2);
+console.log(seaTacAirport);
+var seattleCenter = new StoreProfile('Seattle Center', 23, 65, 6.3);
+console.log(seattleCenter);
+var capitolHill = new StoreProfile('Capitol Hill', 23, 65, 6.3);
+console.log(capitolHill);
+var alki = new StoreProfile('Alki', 23, 65, 6.3);
+console.log(alki);
 
-var pike = {
-name: 'pike',
+StoreProfile.prototype.render = function() {
+  var parentElement = document.getElementById('storeProfiles');
+  var article = document.createElement('article');
+  parentElement.appendChild(article);
+  var table = document.createElement('table');
+  var row1 = document.createElement('tr');
+  var row2 = document.createElement('tr');
+  var row3 = document.createElement('tr');
+  var row4 = document.createElement('tr');
+  var row5 = document.createElement('tr');
+console.log('work');
+  var currentHour;
+
+for (var i = 6; i < 20; i++) {
+  console.log('anything');
+    if (i < 12) {
+      currentHour = i + 'am';
+    } else if (i == 12) {
+      currentHour = i + 'pm';
+    } else {
+      currentHour = (i - 12) + 'pm';
     }
-};
-
-var seaTacAirport = {
-name: 'SeaTacAirport',
-function getCookies(min, max) {
-    return Math.floor(Math.random() *
-    (max - min + 1) + min);
-    return seaTacAirport.getCookies
-    }
-};
-
-var foo = {
-0: {
-my: 'obj'
+  var hour = document.createElement('td');
+  console.log(currentHour);
+  hour.textContent = currentHour;
+  row1.appendChild(hour);
+    };
+table.appendChild(row1);
+article.appendChild(table);
+var sales, totalSales;
+//keep track of what row
+//two for loops, the first keeps track of what row we are creating
+//create the row inside the first One
+//this is the second for loop inside of the other loop that I need to create
+for (var j = 0; j < 14; j++) {
+  function SalesPerHour(AvgCustPerHour, avgCookieSale) {
+    sales = Math.floor(AvgCustPerHour * avgCookieSale);
+    var perHour = document.createElement('td');
+    perHour.textContent = sales;
+  }
 }
+totalSales += sales;
+var td15 = document.createElement('td');
+td15.textContent = totalSales;
+
+// row1.appendChild(th1);
+// row1.appendChild(th2);
+// row1.appendChild(th3);
+// row1.appendChild(th4);
+// row1.appendChild(th5);
+// row1.appendChild(th6);
+// row1.appendChild(th7);
+// row1.appendChild(th8);
+// row1.appendChild(th9);
+// row1.appendChild(th10);
+// row1.appendChild(th11);
+// row1.appendChild(th12);
+// row1.appendChild(th13);
+// row1.appendChild(th14);
+// row1.appendChild(th15);
+// row1.appendChild(th16);
+//
+// row2.appendChild(td1);
+// row2.appendChild(td2);
+// row2.appendChild(td3);
+//
+// table.appendChild(row1);
+// table.appendChild(row2);
+// article.appendChild(table);
 };
-
-var key = 27;
-console.log(foo[key]);
-
-function randomAge(min, max) {
-return Math.floor(Math.random() *
-(max - min + 1) + min);
-}
-
-var parentElement = document.getElementById('kittenProfiles');
-
-var article = document.createElement('article');
-parentElement.appendChild(element);
-
-//comment for problemsolving
-var h2 = document.createElement('h2');
-h2.textContent = pike.name;
-article.appendChild(h2);
-
-var p = document.createElement('p');
-p.textContent = '1st and Pike: ' + pike.getCookies;
-article.appendChild(p);
-
-var ul = document. createElement('ul');
-article.appendChild(p);
-
-for (var = i = 0; i< 16; i++) {
-var li = document.crateElement('li');
-li.textContent = pike.getCookies[i];
-ul.appendChild(li);
-}
-
-// var img = document.createElement('img');
-// img.setAttribute('src', 'images/' + frankie.name + ''.jpeg');
-// img.setAttribute('alt', 'cute picture pf ' + frankie.name + ', who is an orange cat.');
-// article.appendChild(img);
