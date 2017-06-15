@@ -1,5 +1,10 @@
 'use strict';
 
+//form add inputs
+//name of store
+//min custy
+//max custy
+
 function StoreProfile(name, min, max, avgCookieSale) {
   this.name = name;
   this.min = min;
