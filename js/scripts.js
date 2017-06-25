@@ -29,9 +29,9 @@ var alki = new StoreProfile('Alki', 23, 65, 6.3);
 console.log(alki);
 
 StoreProfile.prototype.render = function() {
-  var parentElement = document.getElementById('storeProfiles');
+  var parentElement = document.createElement('storeProfiles');
   var article = document.createElement('article');
-  parentElement.appendChild(article);
+  parentElement.appendChild('article');
   var table = document.createElement('table');
   var row1 = document.createElement('tr');
   var row2 = document.createElement('tr');
